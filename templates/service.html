@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block service %}active{% endblock service %}
+{% load static %}
+
+{% block content %}
+     <!-- services -->
+     <div class="services">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12">
+                 <div class="titlepage text_align_center ">
+                    <h2>Sog‘lom ovqatlanish bo‘yicha xizmatlar</h2>
+                 </div>
+              </div>
+           </div>
+           <div class="row">
+            {% for services in service %}
+              <div class="col-md-4">
+                 <div id="ho_shad" class="services_box text_align_left">
+                    <h3>{{ services.name }}</h3>
+                    <figure><img src="{{ services.image.url }}" alt="#"/></figure>
+                    <p>{{ services.description }}</p>
+                 </div>
+              </div>
+            {% endfor %}
+           </div>
+        </div>
+     </div>
+     <!-- end services -->
+{% endblock content %}

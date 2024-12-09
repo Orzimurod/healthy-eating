@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block blog %}active{% endblock blog %}
+{% load static %}
+
+{% block content %}
+<div class="blog">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage text_align_center ">
+                <h2>Postlar</h2>
+                <p>Sog‘lom ovqatlanish va sog‘lom hayot tarziga oid maqolalar</p>
+             </div>
+          </div>
+       </div>
+       <div class="row d_flex">
+          {% for blogs in blog %}
+          <div class="col-md-4">
+             <div class="latest">
+                <figure><img src="{{ blogs.image.url }}" alt="#"/></figure>
+                <span>{{ blogs.created_at }}</span>
+                <div class="nostrud">
+                   <h3>{{ blogs.title }}</h3>
+                   <p>{{ blogs.content }}</p>
+                   <a>{{ blogs.author }}</a>
+                </div>
+             </div>
+          </div>
+          {% endfor %}
+       </div>
+    </div>
+ </div>
+ <!-- end blog -->
+{% endblock content %}

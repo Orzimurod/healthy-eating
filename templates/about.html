@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+class="{% block about %}active{% endblock about %}"
+{% load static %}
+
+{% block content %}
+<!-- about -->
+<div class="about">
+    {% for abouts in about %}
+    <div class="container_width">
+       <div class="row d_flex grig">
+          <div class="col-md-6">
+             <div class="about_img">
+                <figure><img src="{{ abouts.image.url }}" alt="#"/>
+                </figure>
+             </div>
+          </div>
+          <div class="col-md-6 order">
+             <div class="titlepage text_align_left">
+                <h2>{{ abouts.title }}</h2>
+                <p>{{ abouts.content }}</p>
+                <a class="#" href="#">{{ abouts.created_at }}</a>
+             </div>
+          </div>
+       </div>
+    </div>
+    {% endfor %}
+ </div>
+ <!-- end about -->
+{% endblock content %}
